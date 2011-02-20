@@ -67,7 +67,7 @@ module Excon
             when nil
               request << key.to_s << '&'
             when Array
-              for value in values
+              values.each do |value|
                 request << key.to_s << '=' << CGI.escape(value.to_s) << '&'
               end
             else
